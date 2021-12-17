@@ -18,6 +18,14 @@ namespace OrderTracker.Tests
       Vendor myVendor = new Vendor("Bob");
       Assert.AreEqual("Bob",myVendor.Name);
     }
+    [TestMethod]
+    public void AddOrder_AddsAnOrder_True()
+    {
+      Vendor myVendor = new Vendor("Bob");
+      myVendor.AddOrder("12/17/21",420);
+      Assert.AreNotEqual(0,myVendor.OrderList.Count);
+    }
+    
 
   }
   [TestClass]
