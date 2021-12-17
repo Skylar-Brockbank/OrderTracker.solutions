@@ -1,0 +1,10 @@
+* {
+  font-family: sans-serif;
+}
+
+.butt {
+  box-sizing: border-box;
+  padding: .5em;
+  background-color: red;
+  color: white;
+}
