@@ -29,5 +29,12 @@ namespace OrderTracker.Tests
       Order myOrder = new Order("12/17/21",15);
       Assert.IsNotNull(myOrder);
     }
+    [TestMethod]
+    public void Order_ConstructorAssignsCorrectValues_True()
+    {
+      Order myOrder = new Order("12/17/21",15);
+      Assert.AreEqual("12/17/21",myOrder.OrderDate);
+      Assert.AreEqual(15, myOrder.Amount);
+    }
   }
 }
