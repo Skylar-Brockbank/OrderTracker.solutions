@@ -18,5 +18,16 @@ namespace OrderTracker.Tests
       Vendor myVendor = new Vendor("Bob");
       Assert.AreEqual("Bob",myVendor.Name);
     }
+
+  }
+  [TestClass]
+  public class OrderTests
+  {
+    [TestMethod]
+    public void Order_ConstructorCreatesObject_True()
+    {
+      Order myOrder = new Order("12/17/21",15);
+      Assert.IsNotNull(myOrder);
+    }
   }
 }
