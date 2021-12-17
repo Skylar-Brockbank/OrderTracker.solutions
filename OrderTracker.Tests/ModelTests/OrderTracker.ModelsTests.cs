@@ -33,7 +33,13 @@ namespace OrderTracker.Tests
       Assert.AreEqual(myVendor.OrderList[0].OrderDate, "12/17/21");
       Assert.AreEqual(myVendor.OrderList[0].Amount,420);
     }
-    
+    [TestMethod]
+    public void Find_RetrievesAnOrder_True()
+    {
+      Vendor myVendor = new Vendor("Bob");
+      myVendor.AddOrder("12/17/21",420);
+      Assert.AreEqual(myVendor.Find(0),myVendor.OrderList[0]);
+    }
 
   }
   [TestClass]
