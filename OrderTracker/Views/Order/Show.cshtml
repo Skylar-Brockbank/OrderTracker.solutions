@@ -1,0 +1,8 @@
+@{
+  Layout = "_Layout";
+}
+@using OrderTracker.Models;
+<h1>@Model.OrderDate</h1>
+<p>quantity ordered: @Model.Amount units</p>
+
+<a href="/vendor/@Model.ParentID">Back to vendor</a>

@@ -10,17 +10,19 @@ namespace OrderTracker.Controllers
         Vendor target = Vendor.GetById(id);
         return View(target);
       }
-      [HttpPost("/Vendor/{id}/order/new")]
-      public ActionResult Create(int id, string date, int qty)
+      [HttpPost("/Vendor/{id}/order")]
+      public ActionResult Create(int id, string orderDate, int quantity)
       {
-        Vendor.vendorList[id].AddOrder(date,qty);
-        return RedirectToAction("Show",id,Vendor.vendorList[id].OrderList.Count-1);
+        Vendor.vendorList[id].AddOrder(orderDate,quantity);
+        int orderId = Vendor.vendorList[id].OrderList.Count-1;
+        Order input = Vendor.GetById(id).Find(orderId);
+        return RedirectToAction("Show","Vendor",new {id=id});
       }
-      [HttpGet("/Vendor/{id}/order/{Vendor.vendorList[id].OrderList.Count-1}")]
-      public ActionResult Show(int id, int orderId)
+      [HttpGet("/Vendor/{ID}/order/{orderId}")]
+      public ActionResult Show(int ID, int orderId)
       {
-        int inputIds = [id,orderId];
-        return View(inputIds);
+        Order input = Vendor.GetById(ID).Find(orderId);
+        return View(input);
       }
     }
 }

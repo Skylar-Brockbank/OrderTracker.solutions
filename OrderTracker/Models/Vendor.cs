@@ -17,7 +17,7 @@ namespace OrderTracker.Models
     }
     public void AddOrder(string date, int qty)
     {
-      OrderList.Add(new Order(date, qty,OrderList.Count));
+      OrderList.Add(new Order(date, qty,OrderList.Count,ID));
     }
     public Order Find(int ID)
     {

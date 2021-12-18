@@ -2,7 +2,8 @@
   Layout = "_Layout";
 }
 
-<form action="/Vendor/@Model.ID/order/new" method="post">
+<form action="/Vendor/@Model.ID/order" method="post">
+  <input id="id" name="id" type="hidden" value="@Model.ID">
   <label>order Date
     <input id="orderDate" name="orderDate" type="text">
   </label>
