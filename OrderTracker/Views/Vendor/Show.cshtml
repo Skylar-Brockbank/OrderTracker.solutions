@@ -1,0 +1,16 @@
+@{
+  Layout = "_Layout";
+}
+@using OrderTracker.Models;
+
+@if(@Model.OrderList.Count == 0){
+  <p>There are no orders for this vendor</p>
+}else{
+  <ul>
+    @foreach (Order O in @Model.OrderList)
+    {
+      <li>@O.OrderDate</li>
+    }
+  </ul>
+}
+<a href="/Vendor/@Model.ID/order/new">Add an order</a>

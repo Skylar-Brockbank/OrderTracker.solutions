@@ -1,0 +1,20 @@
+@{
+  Layout = "_Layout";
+}
+@using OrderTracker.Models;
+
+<h1>Vendor List</h1>
+
+@if(Model.Count == 0)
+{
+  <p>There are no vendors on the list right now</p>
+}else{
+  <ul>
+    @foreach (Vendor i in Vendor.GetAllVendors())
+    {
+      <li><a href="/vendor/@i.ID">@i.Name</a></li>    
+    }
+  </ul>
+}
+
+<a href="/vendor/New">Add a new Vendor</a>

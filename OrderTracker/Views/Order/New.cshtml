@@ -1,0 +1,13 @@
+@{
+  Layout = "_Layout";
+}
+
+<form action="/Vendor/@Model.ID/order/new" method="post">
+  <label>order Date
+    <input id="orderDate" name="orderDate" type="text">
+  </label>
+  <label>quantity
+    <input id="quantity" name="quantity" type="number">
+  </label>
+  <button type="submit">submit</button>
+</form>
