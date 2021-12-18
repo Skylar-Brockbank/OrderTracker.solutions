@@ -3,6 +3,7 @@
 }
 @using OrderTracker.Models;
 <h1>@Model.Name</h1>
+<p>@Model.Description</p>
 @if(@Model.OrderList.Count == 0){
   <p>There are no orders for this vendor</p>
 }else{
